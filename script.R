@@ -15,12 +15,66 @@ y <- as.data.frame(y)
 y <- t(y)
 row.names(y) <- NULL
 
-hope_con <- mapply(generation_function, x = x)
+#calculation of each year - repeat logic for new year
 
-hope_con <- as.data.frame(hope_con)
-hope_con <- t(hope_con)
-row.names(hope_con) <- NULL
+twenty <- mapply(generation_function, x = x, year_date = '2020')
+twenty <- as.data.frame(twenty)
+twenty <- t(twenty)
+row.names(twenty) <- NULL
 
-HONGKONG <- cbind(y,hope_con)
+ninteen <- mapply(generation_function, x = x, year_date = '2019')
+ninteen <- as.data.frame(ninteen)
+ninteen <- t(ninteen)
+row.names(ninteen) <- NULL
+
+eighteen <- mapply(generation_function, x = x, year_date = '2018')
+eighteen <- as.data.frame(eighteen)
+eighteen <- t(eighteen)
+row.names(eighteen) <- NULL
+
+seventeen <- mapply(generation_function, x = x, year_date = '2017')
+seventeen <- as.data.frame(seventeen)
+seventeen <- t(seventeen)
+row.names(seventeen) <- NULL
+
+sixteen <- mapply(generation_function, x = x, year_date = '2016')
+sixteen <- as.data.frame(sixteen)
+sixteen <- t(sixteen)
+row.names(sixteen) <- NULL
+
+fifteen <- mapply(generation_function, x = x, year_date = '2015')
+fifteen <- as.data.frame(fifteen)
+fifteen <- t(fifteen)
+row.names(fifteen) <- NULL
+
+fourteen <- mapply(generation_function, x = x, year_date = '2014')
+fourteen <- as.data.frame(fourteen)
+fourteen <- t(fourteen)
+row.names(fourteen) <- NULL
+
+thirteen <- mapply(generation_function, x = x, year_date = '2013')
+thirteen <- as.data.frame(thirteen)
+thirteen <- t(thirteen)
+row.names(thirteen) <- NULL
+
+twelve <- mapply(generation_function, x = x, year_date = '2012')
+twelve <- as.data.frame(twelve)
+twelve <- t(twelve)
+row.names(twelve) <- NULL
+
+eleven <- mapply(generation_function, x = x, year_date = '2011')
+eleven <- as.data.frame(eleven)
+eleven <- t(eleven)
+row.names(eleven) <- NULL
+
+ten <- mapply(generation_function, x = x, year_date = '2010')
+ten <- as.data.frame(ten)
+ten <- t(ten)
+row.names(ten) <- NULL
+
+#output of information
+output_pivot <- cbind(y,twenty,ninteen, eighteen, seventeen, sixteen, fifteen, fourteen, thirteen, twelve, eleven, ten)
+output_pivot <- as.data.frame(output_pivot)
+
 
 

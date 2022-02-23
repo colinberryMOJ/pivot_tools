@@ -1,18 +1,13 @@
-generation_function <- function(x){
+generation_function <- function(year_date, x){
+  df  <- year_filter_function(year_date)
   df1 <- rowSums(df[ , c(x)], na.rm=TRUE)
   df1 <- sum(df1)
   df1 <- as.list(df1)
   return(df1)
 }
 
-ten_function <- function(x){
-  
-  informationbyyear <- mapply(generation_function, x = x)
-  return(informationbyyear)
+year_filter_function <- function(year_date){
+  df <- df %>% filter(grepl((year_date), Year))
+  return(df)
 }
 
-eleven_function <- function(x){
-  
-  informationbyyear <- mapply(generation_function, x = x)
-  return(informationbyyear) 
-}
